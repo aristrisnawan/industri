@@ -7,9 +7,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Satu from '../images/1.jpg';
-import Dua from '../images/2.jpg';
-import Tiga from '../images/3.jpg';
+import Gambar1 from '../images/1.jpg'
+import Gambar2 from '../images/2.jpg'
+import Gambar3 from '../images/3.jpg'
+import Grid from '@material-ui/core/Grid';
 
 
 const useStyle = makeStyles((theme) => ({
@@ -28,22 +29,30 @@ const useStyle = makeStyles((theme) => ({
     },
     div1:{
         marginLeft:theme.spacing(7)
+    },
+    gmbr:{
+        height:280,
+        width:"100%"
+    },
+    grd:{
+        width:"100%",
+        margin:theme.spacing(5,4,5,2)
     }
 }))
 
 const Gambar = [
     {
-        image: Satu,
+        gmbr: Gambar1,
         title: "Worker",
         Deskription: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
     {
-        image: Dua,
+        gmbr: Gambar2,
         title: "Worker",
         Deskription: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
     {
-        image: Tiga,
+        gmbr: Gambar3,
         title: "Worker",
         Deskription: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
     },
@@ -59,26 +68,34 @@ function Services() {
                 Our Service
             </Typography>
             </div>
-            <Card>
-                        <CardActionArea >
-                    <CardMedia>
-                        
-                    </CardMedia>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Title
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            containt
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button>
-                </CardActions>
-            </Card>
+            <Grid container spacing={2} className={classes.grd}>
+            {
+                Gambar.map((data,index) => (
+                <Grid item xs={12} sm={12} md={6} lg={4}>
+                <Card key={index}>
+                    <CardActionArea >
+                        <CardMedia >
+                        <img src={data.gmbr} className={classes.gmbr}/>
+                        </CardMedia>
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {data.title}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {data.Deskription}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" color="primary">
+                            Learn More
+                        </Button>
+                    </CardActions>
+                </Card>
+                </Grid>
+                   ))
+            }
+            </Grid>
         </div>
     )
 }
