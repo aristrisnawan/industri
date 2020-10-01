@@ -16,7 +16,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyle = makeStyles((theme) => ({
     root:{
         backgroundColor:"#fff",
-        height:"50vh"
+        height:"90vh"
     },
     txt:{
         fontSize:70,
