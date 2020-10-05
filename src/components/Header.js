@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
       },
       fab:{
           backgroundColor:theme.palette.warning.dark
+      },
+      lnk:{
+        color:"#fff",
+        textDecoration:"none"
       }
   }));
   
@@ -79,6 +83,15 @@ const useStyles = makeStyles((theme) => ({
      */
     window: PropTypes.func,
   };
+
+  var number = "{{082117295505}}"
+  var message = "{{Saya ingin memesan sebuah project}}"
+
+  function getLinkWhatsApp(numb,mess) {
+    numb = number
+    mess = message
+    return console.log('https://api.whatsapp.com/send?phone=' + numb + '&text=%20' + encodeURIComponent(mess))
+  }
   
 function Header(props) {
     const classes = useStyles()
@@ -89,26 +102,41 @@ function Header(props) {
                     <AppBar position="fixed" className={classes.App}>
                         <Toolbar>
                         <Grid container spacing={4} className={classes.grd}>
-                            <Grid item xs={3}>
+                            <Grid item xs={12} sm={12} md={6} lg={3}>
                             <Typography variant="h2" className={classes.title}>
                             <Button color="inherit" startIcon={<LocationCityIcon />}>
                                 Constraction
                             </Button>
                             </Typography>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={12} md={6} lg={6}>
+                             <a href="#Home" className={classes.lnk}> 
                             <Button color="inherit">Home</Button>
+                            </a>
+                            <a href="#About" className={classes.lnk}>
                             <Button color="inherit">About</Button>
+                            </a>
+                            <a href="#" className={classes.lnk}>
                             <Button color="inherit">Projects</Button>
+                            </a>
+                            <a href="#Services" className={classes.lnk}>
                             <Button color="inherit">Services</Button>
+                            </a>
+                            <a href="#" className={classes.lnk}>
                             <Button color="inherit">Blog</Button>
+                            </a >
+                            <a href="#" className={classes.lnk}>
                             <Button color="inherit">Pages</Button>
+                            </a>
+                            <a href="#Contact" className={classes.lnk}>
                             <Button color="inherit">Contact</Button>
+                            </a>
                             </Grid>
-                            <Grid item xs={3}>
+                            <Grid item xs={12} sm={12} md={6} lg={3}>
                             <Button
                                 variant="contained"
                                 className={classes.cstm}
+                                href="https://api.whatsapp.com/send?phone=+{{082117295505}}&text=%207B%7BSaya%20ingin%20memesan%20sebuah%20project%7D%7D"
                             >
                                 Contact Now
                             </Button>

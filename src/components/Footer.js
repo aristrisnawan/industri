@@ -8,7 +8,8 @@ import LocationCityIcon from '@material-ui/icons/LocationCity';
 const useStyle = makeStyles((theme) => ({
     root:{
         backgroundColor:"#070b11",
-        height:"60vh"
+        minHeight:"60vh",
+        height:"auto"
     },
     grd:{
         paddingTop:40,
@@ -35,9 +36,9 @@ const useStyle = makeStyles((theme) => ({
 function Footer() {
     const classes = useStyle()
     return (
-        <div className={classes.root}>
-            <Grid container className={classes.grd}>
-                <Grid item xs={3} className={classes.item}>
+        <div className={classes.root} id="Contact">
+            <Grid container className={classes.grd} >
+                <Grid item xs={12} sm={12} md={3}  className={classes.item}>
                         <Button color="inherit" className={classes.btn} startIcon={<LocationCityIcon />}>
                             Constraction
                         </Button>
@@ -47,7 +48,7 @@ function Footer() {
                         </Typography>
                     
                 </Grid>
-                <Grid item xs={3} className={classes.item}>
+                <Grid item xs={12} sm={12} md={3}  className={classes.item}>
                     <Typography className={classes.btn}>
                         Quick Links
                     </Typography>
@@ -58,7 +59,7 @@ function Footer() {
                         Contact us 
                     </Typography>
                 </Grid>
-                <Grid item xs={3} className={classes.item}>
+                <Grid item xs={12} sm={12} md={3}  className={classes.item}>
                     <Typography className={classes.btn}>
                         Contact
                     </Typography>

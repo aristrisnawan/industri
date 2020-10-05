@@ -1,13 +1,15 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles,useTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Boss from '../images/pengusaha.jfif'
+import Boss from '../images/pengusaha.jfif';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyle = makeStyles((theme) => ({
     root:{
-        // height:"50vh",
+        minHeight:"50vh",
+        height:"auto",
         backgroundColor:"#fff"
     },
     typ:{
@@ -18,7 +20,7 @@ const useStyle = makeStyles((theme) => ({
         fontFamily:"Teko, sans-serif",
         color:"rgb(14, 19, 42)",
         paddingTop:50,
-        marginLeft:theme.spacing(3)
+        marginLeft:theme.spacing(3),
     },
     txt:{
         color:"#0b0b2b",
@@ -47,16 +49,20 @@ const useStyle = makeStyles((theme) => ({
     }
 }))
 
+ 
+
+
 function About() {
     const classes = useStyle()
+
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="About">
             <div>
                 <Typography variant="h2" className={classes.typ}>
                     WHO WE ARE
                 </Typography>
                 <Grid container spacing={5} className={classes.grd}>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={12} md={6} lg={6}>
                         <Typography className={classes.txt}>
                         Mollit anim laborum duis au dolor in voluptcate velit ess cillum <br/>
                         dolore eu lore dsu quality mollit anim laborumuis au dolor in <br/>
@@ -67,12 +73,13 @@ function About() {
                         esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa <br/>
                         cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt<br/>
                         ut;o5tu layjobore mofllit anim.<br/>
+
                         </Typography>
                         <Button variant="contained" className={classes.btn}>
                             Reade More
                         </Button>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6} md={6} lg={6}>
                         <img src={Boss} alt="owner" className={classes.gmbr}/>
                     </Grid>
                 </Grid>

@@ -16,7 +16,8 @@ import Grid from '@material-ui/core/Grid';
 const useStyle = makeStyles((theme) => ({
     root:{
         backgroundColor:"#fff",
-        height:"90vh"
+        minHeight:"90vh",
+        height:"auto"
     },
     txt:{
         fontSize:70,
@@ -62,7 +63,7 @@ const Gambar = [
 function Services() {
     const classes = useStyle()
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="Services">
             <div className={classes.div1}>
             <Typography variant="h2" className={classes.txt}>
                 Our Service

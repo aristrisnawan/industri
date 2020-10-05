@@ -1,0 +1,23 @@
+.advanced {
+    font-size:140px;
+    font-weight :900px;
+    font-family : Barlow, sans-serif;
+    line-height :1 ;
+    text-transform: uppercase;
+    color: rgb(255, 95, 19);
+    margin:0;
+    padding:0
+}
+
+
+
+ @media only screen and (max-width: 768px) { 
+     .advanced {
+        font-size: 100px;
+        line-height :1 ;
+     }   
+    .title-1 {
+        font-size: 100px;
+        line-height:1;
+    }
+ }

@@ -2,10 +2,14 @@ import React from 'react'
 import { makeStyles, rgbToHex } from '@material-ui/core/styles';
 import Cranes from '../images/cranes.jpg'
 import Container from '@material-ui/core/Container';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Style } from '@material-ui/icons';
+import Hom from '../css/Home.css'
 
 const useStyle = makeStyles((theme) => ({
     root:{
-        height:"100vh",
+        minHeight:"100vh",
+        height:"auto",
         backgroundPosition:"center",
         backgroundSize:"cover",
         backgroundRepeat:"no-repeat"
@@ -33,16 +37,6 @@ const useStyle = makeStyles((theme) => ({
             bacground:"rgb(255, 95, 19)"
         }
     },
-    advanced:{
-        fontSize:140,
-        fontWeight:900,
-        fontFamily:"Barlow, sans-serif",
-        lineHeight:1,
-        textTransform:"uppercase",
-        color:"rgb(255, 95, 19)",
-        margin:0,
-        padding:0
-    },
     construction:{
         fontSize:100,
         fontWeight:900,
@@ -53,25 +47,26 @@ const useStyle = makeStyles((theme) => ({
         textTransform:"uppercase",
         color:"rgb(255, 95, 19)"
     },
-    firstH2:{
-        
-    
+    media:{
+        color:"yellow"
     }
 }))
+
+
 
 function Home() {
     const classes = useStyle()
     return (
-        <div style={{backgroundImage:`url(${Cranes})`}} className={classes.root}>
+        <div style={{backgroundImage:`url(${Cranes})`}} className={classes.root} id="Home">
             <Container className={classes.div1}>
                 <div>
                     <span className={classes.handCar}>
                         "Hand car wash and detailing service"
                     </span>
                 </div>
-                <h1 className={classes.advanced}>ADVANCED</h1>
+                <h1 className="advanced">ADVANCED</h1>
                 <div className={classes.construction}>
-                    <h2>Construction</h2>
+                    <h2 className="title-1">Construction</h2>
                 </div>
             </Container>
         </div>
